@@ -6,54 +6,61 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ReverseStringTest {
-    // the empty string
-    private ReverseString emptyString = new ReverseString("");
-    // random string
-    private ReverseString rString0 = new ReverseString("god");
-    // same lettered string
-    private ReverseString rString1 = new ReverseString("aaa");
-    // integers in a string
-    private ReverseString rString2 = new ReverseString("123");
-    // string as a palindrome
-    private ReverseString rString3 = new ReverseString("pop");
-    // long string
-    private ReverseString rString4 = new ReverseString("abcdefghijklmnopqrstuvwxyz");
-    // null
-    private ReverseString rString5 = new ReverseString(null);
 
     @Test
     public void stringReversed() {
-        assertThat(emptyString.getReverseString(), equalTo(""));
+        // the empty string
+        String emptyString = "";
+        ReverseString rString = new ReverseString();
+        assertThat(rString.getReverseString(emptyString), equalTo(""));
     }
 
     @Test
-    public void stringReversed1(){
-        assertThat(rString0.getReverseString(), equalTo("dog"));
+    public void stringReversed1() {
+        // random string
+        String randomString = "god";
+        ReverseString rString = new ReverseString();
+        assertThat(rString.getReverseString(randomString), equalTo("dog"));
     }
 
     @Test
-    public void stringReversed2(){
-        assertThat(rString1.getReverseString(), equalTo("aaa"));
+    public void stringReversed2() {
+        // same lettered string
+        String sameLetteredString = "aaa";
+        ReverseString rString = new ReverseString();
+        assertThat(rString.getReverseString(sameLetteredString), equalTo("aaa"));
     }
 
     @Test
-    public void stringReversed3(){
-        assertThat(rString2.getReverseString(), equalTo("321"));
+    public void stringReversed3() {
+        // number as string
+        String numberAsString = "123";
+        ReverseString rString = new ReverseString();
+        assertThat(rString.getReverseString(numberAsString), equalTo("321"));
     }
 
     @Test
-    public void stringReversed4(){
-        assertThat(rString3.getReverseString(), equalTo("pop"));
+    public void stringReversed4() {
+        // palindrome
+        String palindrome = "pop";
+        ReverseString rString = new ReverseString();
+        assertThat(rString.getReverseString(palindrome), equalTo("pop"));
     }
 
     @Test
-    public void stringReversed5(){
-        assertThat(rString4.getReverseString(), equalTo("zyxwvutsrqponmlkjihgfedcba"));
+    public void stringReversed5() {
+        // long string
+        String longString = "abcdefghijklmnopqrstuvwxyz";
+        ReverseString rString = new ReverseString();
+        assertThat(rString.getReverseString(longString), equalTo("zyxwvutsrqponmlkjihgfedcba"));
     }
 
     @Test
-    public void stringReversed6(){
-        assertThat(rString5.getReverseString(), equalTo(null));
+    public void stringReversed6() {
+        // null
+        String nullString = null;
+        ReverseString rString = new ReverseString();
+        assertThat(rString.getReverseString(nullString), equalTo(null));
     }
 
 }
