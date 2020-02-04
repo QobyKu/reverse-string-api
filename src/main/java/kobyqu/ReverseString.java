@@ -2,14 +2,8 @@ package kobyqu;
 
 public class ReverseString {
 
-    private String string;
-
-    public ReverseString(String string) {
-        this.string = string;
-    }
-
     // method to reverse a given string
-    public String getReverseString() {
+    public String getReverseString(String string) {
 
         if (string == null) {
             return null;

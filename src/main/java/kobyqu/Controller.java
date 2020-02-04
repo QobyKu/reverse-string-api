@@ -16,7 +16,7 @@ public class Controller {
     // /reverse/<string> returns <string> reversed
     @RequestMapping(value = "/reverse/{string}", method = RequestMethod.GET)
     public @ResponseBody String getBody (@PathVariable String string) {
-        ReverseString rs = new ReverseString(string);
-        return rs.getReverseString();
+        ReverseString rs = new ReverseString();
+        return rs.getReverseString(string);
     }
 }
